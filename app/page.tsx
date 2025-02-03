@@ -1,9 +1,14 @@
 "use client";
-import { signIn } from "@/lib/client";
+import { signIn, useSession } from "@/lib/client";
 
 export default function Home() {
+  const user = useSession();
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <p className="border-orange-600 bg-white/5 whitespace-pre-wrap rounded-xl border-2 p-2 font-mono text-xs">
+        {JSON.stringify(user, null, 2)}
+      </p>
+
       <button
         className={
           "w-full flex gap-2 max-w-60 border-2 items-center justify-center border-white/40 hover:bg-white/5 rounded-md p-2"
