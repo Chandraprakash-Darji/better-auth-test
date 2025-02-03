@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <button
-        className={"w-full gap-2"}
+        className={
+          "w-full flex gap-2 max-w-60 border-2 items-center justify-center border-white/40 hover:bg-white/5 rounded-md p-2"
+        }
         onClick={async () => {
           await signIn.social({
             provider: "google",
